@@ -10,6 +10,7 @@ import {
 import renderMessage from './message.js';
 import { render as renderEditContact } from './editContact.js';
 import { render as renderAddPet } from './addPet.js';
+import { clearStage } from './clearStage.js';
 
 const stage = document.querySelector('.stage');
 
@@ -20,7 +21,7 @@ stage.addEventListener('click', (event) => {
 
   if (
     target.nodeName !== 'BUTTON' ||
-    !target.classList.contains('delete-friend')
+    !target.classList.contains('delete-contact-button')
   ) {
     return;
   }
@@ -56,7 +57,7 @@ stage.addEventListener('click', (event) => {
   }
 
   clearMessages();
-  stage.innerHTML = '';
+  clearStage(stage);
   stage.append(renderEditContact(contact));
 });
 
@@ -71,7 +72,7 @@ stage.addEventListener('click', (event) => {
     return;
   }
 
-  stage.innerHTML = '';
+  clearStage(stage);
 });
 
 // add contact button
@@ -99,7 +100,7 @@ stage.addEventListener('submit', (event) => {
   addMessage(
     renderMessage(`Contact ${name.value} ${surname.value} created.`, 'success'),
   );
-  stage.innerHTML = '';
+  clearStage(stage);
 });
 
 // save edit contact
@@ -143,7 +144,7 @@ stage.addEventListener('click', (event) => {
   const contactId = contactContainer.dataset.contactId;
 
   clearMessages();
-  stage.innerHTML = '';
+  clearStage(stage);
 
   stage.append(renderAddPet(contactId));
 });
@@ -172,7 +173,7 @@ stage.addEventListener('submit', (event) => {
 
   addPet(contactId.value, pet);
 
-  stage.innerHTML = '';
+  clearStage(stage);
   addMessage(
     renderMessage(
       `Pet ${name.value} added to contact ${contactName} ${contactSurname}.`,

@@ -445,6 +445,24 @@ a {
   right: 155px;
 }
 
+.header-counter {
+  position: relative;
+  margin-top: 6px;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.header-counter .qty {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  padding: 2px 4px;
+  background-color: rgb(226, 214, 214);
+  border-radius: 8px;
+  color: #2b2b2b;
+  font-size: 10px;
+}
+
 /* Simt ca am gresit aici ^ ar fi trebuit
 oare pusa iconita direct in placeholder? */
 .header-bottom {
@@ -647,6 +665,10 @@ aside img {
   margin-left: 0;
 }
 
+.footer-sign-up-newsletter .container {
+  margin-bottom: 10px;
+}
+
 .footer-nav-style nav li {
   margin-bottom: 15px;
 }
@@ -663,3 +685,16 @@ aside img {
 }
 /* footer-ul nu e aliniat ca in design.
 Il voi schimba daca trebuie, dar m-am distrat putin aranjanu-le */
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spinner {
+  animation: rotation 2s infinite steps(8);
+}
