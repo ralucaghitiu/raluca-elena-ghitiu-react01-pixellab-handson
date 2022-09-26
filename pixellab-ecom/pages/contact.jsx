@@ -1,13 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const ContactPage = () => {
-    return <>
-    <Head>
+  return (
+    <>
+      <Head>
         <title>Contact Page</title>
-    </Head>
+      </Head>
 
-    <main>hello from next</main>
+      <main>hello from next</main>
     </>
+  );
 };
 
 // este obligatoriu sa returnam un default export

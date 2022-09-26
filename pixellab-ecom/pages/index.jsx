@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -13,13 +13,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <a href="/contact" title="contact">
-        Contact
-      </a>
-
-      <Link href="contact">
-
-      </Link>
+        <Link href="/contact">
+          <a title="contact">Contact</a>
+        </Link>
       </main>
 
       <footer className={styles.footer}>
@@ -35,5 +31,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
